@@ -1,0 +1,5 @@
+
+ofxparse>=0.20,<1.0.0
+
+# boolean
+# docopt==0.6.1

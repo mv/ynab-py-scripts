@@ -1,0 +1,35 @@
+
+# flake8>=3.7.8
+# pytest>=4.0.2,<5.0.0
+
+# pylint>=2.3.1
+# pytest-pylint
+
+# Code formatter
+# https://github.com/python/black
+# black
+
+# Mock out AWS infrastructure
+# https://github.com/spulec/moto
+# moto
+
+# Mock API endpoints
+# https://github.com/huseyinyilmaz/placebo
+# placebo
+
+# Python static type checker
+# https://github.com/python/mypy
+# mypy
+
+# Python code security
+# https://github.com/PyCQA/bandit
+# bandit
+
+# http cli
+# https://github.com/jakubroztocil/httpie
+# httpie>=1.0.2
+
+# Fire: exposing functions to CLI
+# https://github.com/google/python-fire
+# https://github.com/google/python-fire/blob/master/docs/guide.md
+# fire>=0.1.3
