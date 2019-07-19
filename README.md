@@ -36,7 +36,7 @@ To generate a valid YNAB file:
 YNAB Classic input CSV file must have the follow layout:
 
 ```csv
-date,x1,memo,inbound,outboud
+Date,Payee,Category,Memo,Outflow,Inflow
 ```
 
 
