@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 #
 import re
+import io
 
 # replacements
 repl = [
@@ -28,7 +29,13 @@ repl = [
 ]
 
 def payee_replace( payee ):
+    '''
+    payee_replace:
+       apply replacement rules to my most common PAYEEs
+    '''
+
     new_payee = payee
+
     for i,regex in enumerate(repl):
         new_payee = re.sub(regex['pattern'], regex['replace'], new_payee, flags=re.I )
         # print(f'regex: {i} - {payee} | {new_payee}')
@@ -37,8 +44,13 @@ def payee_replace( payee ):
 
 
 def ynab_output( tr_data, dt_format='%Y/%m/%d', layout=None ):
+    '''
+    ynab_output:
+        Generate YNAB 4 Classic CSV output
+    '''
 
-    print('Date,Payee,Category,Memo,Outflow,Inflow')
+    output = io.StringIO()
+    output.write('Date,Payee,Category,Memo,Outflow,Inflow\n')
 
     for tr in tr_data:
         payee = payee_replace(tr['memo'])
@@ -50,7 +62,12 @@ def ynab_output( tr_data, dt_format='%Y/%m/%d', layout=None ):
         amount = f'"{float(tr["amount"]):.2f}"'
 
         # Aligned CSV
-        print(f'{dt}, {payee:<30}, "", {memo:<40}, "", {amount:>10}')
+        output.write(f'{dt}, {payee:<30}, "", {memo:<40}, "", {amount:>10}\n')
+
+    csv = output.getvalue()
+    output.close()
+    
+    return(csv)
 
 
 print('Imported: ', __file__)
