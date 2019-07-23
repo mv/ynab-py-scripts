@@ -15,3 +15,4 @@ for tr in ofx.account.statement.transactions:
     my_data.append({'dt':tr.date, 'memo':tr.memo, 'amount':tr.amount})
 
 lib.ynab.ynab_output( my_data )
+

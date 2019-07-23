@@ -18,3 +18,4 @@ for tr in ofx.account.statement.transactions:
 
     # Aligned CSV
     print(f'{dt}, {memo:<40}, "", {memo:<40}, "", {amount:>10}')
+
