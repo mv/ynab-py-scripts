@@ -1,6 +1,8 @@
 #
 
 from ofxparse import OfxParser
+
+import os
 import ynab
 
 
@@ -31,7 +33,9 @@ def ofx_parse(file):
 
     # my data in YNAB format
     csv = ynab.ynab_output( my_ynab_data )
-    with open(file + '.ynab.csv', 'w') as f:
+
+    filename, ext = os.path.splitext(file)
+    with open(filename + '.ynab.csv', 'w') as f:
         f.write(csv)
 
 
