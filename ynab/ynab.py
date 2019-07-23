@@ -51,3 +51,6 @@ def ynab_output( tr_data, dt_format='%Y/%m/%d', layout=None ):
 
         # Aligned CSV
         print(f'{dt}, {payee:<30}, "", {memo:<40}, "", {amount:>10}')
+
+
+print('Imported: ', __file__)

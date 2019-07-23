@@ -12,3 +12,6 @@ CSV_LAYOUT='{dt}, {memo:<40}, "", {memo:<40}, "", {amount:>10}'
 
 def foo():
     print('foo()')
+
+    
+print('Imported: ', __file__)
